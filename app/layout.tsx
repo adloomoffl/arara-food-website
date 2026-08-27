@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://arara-food.openai.site"),
+  metadataBase: new URL("https://arara-food.badiibar.chatgpt.site"),
   title: "ARARA FOOD | Tradition, packed for today",
   description: "Discover ARARA FOOD sweets, vegetables in brine and anchovy fish powder.",
   openGraph: {
