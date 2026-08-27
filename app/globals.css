@@ -334,6 +334,7 @@ img { max-width: 100%; height: auto; }
 .section-heading h2 { max-width: 830px; margin: 0; color: var(--navy); font: 700 clamp(38px, 4.4vw, 66px)/1.03 Georgia, serif; letter-spacing: -.035em; }
 .section-heading > p { max-width: 470px; margin: 0 0 7px; color: var(--muted); font-size: 16px; line-height: 1.7; }
 .product-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; max-width: 1400px; margin: 0 auto; }
+.product-grid--preview { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 840px; }
 
 /* product card with 3D tilt */
 .product-card {
@@ -358,6 +359,7 @@ img { max-width: 100%; height: auto; }
 .section-heading-light h2 { color: var(--cream); }
 .section-heading-light > p { color: rgba(255,255,255,.68); }
 .brine-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; max-width: 1400px; margin: 0 auto; }
+.brine-grid--preview { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 840px; }
 .brine-card {
   overflow: hidden; border: 1px solid rgba(244,231,199,.24); border-radius: 24px;
   background: rgba(11,26,48,.18);
@@ -546,8 +548,31 @@ footer nav a:hover::after { right: 0; }
   .product-section { padding: 60px 16px 70px; max-width: 100%; box-sizing: border-box; }
   .section-heading { max-width: 100%; margin-bottom: 32px; }
   .section-heading h2 { font-size: clamp(30px, 8vw, 42px); }
-  .product-grid { grid-template-columns: 1fr; max-width: 100%; gap: 16px; }
-  .brine-grid { grid-template-columns: 1fr; max-width: 100%; gap: 16px; }
+  .product-grid,
+  .product-grid--preview {
+    grid-template-columns: 1fr !important;
+    max-width: 100%;
+    gap: 22px;
+  }
+  .brine-grid,
+  .brine-grid--preview {
+    grid-template-columns: 1fr !important;
+    max-width: 100%;
+    gap: 22px;
+  }
+  .product-card,
+  .brine-card {
+    max-width: 100%;
+    width: 100%;
+  }
+  .product-image-wrap {
+    aspect-ratio: 1 / 0.95;
+    padding: 20px 20px 0;
+  }
+  .brine-image-wrap {
+    aspect-ratio: 1 / 0.95;
+    padding: 16px 20px 0;
+  }
   .fish-section { min-height: auto; max-width: 100%; overflow: hidden; }
   .fish-visual { min-height: 360px; max-width: 100%; overflow: hidden; padding: 20px; }
   .fish-visual img { width: min(85vw, 360px); max-width: 100%; }

@@ -82,7 +82,7 @@ export default function Home() {
             <p>Familiar nut and seed sweets, polished into premium everyday treats.</p>
           </div>
         </ScrollReveal>
-        <div className="product-grid" style={{ gridTemplateColumns: "repeat(2, minmax(0, 1fr))", maxWidth: "800px" }}>
+        <div className="product-grid product-grid--preview">
           {sweetsPreview.map((product, index) => (
             <ScrollReveal key={product.name} delay={index + 1}>
               <article className="product-card">
@@ -117,7 +117,7 @@ export default function Home() {
             <p>Glass-packed vegetables with vivid colour, honest texture and a clean savoury tang.</p>
           </div>
         </ScrollReveal>
-        <div className="brine-grid" style={{ gridTemplateColumns: "repeat(2, minmax(0, 1fr))", maxWidth: "800px" }}>
+        <div className="brine-grid brine-grid--preview">
           {brinePreview.map((product, index) => (
             <ScrollReveal key={product.name} delay={index + 1}>
               <article className="brine-card">
