@@ -342,15 +342,33 @@ img { max-width: 100%; height: auto; }
   background: linear-gradient(155deg, #fff, var(--section));
   transition: transform .4s cubic-bezier(.22, 1, .36, 1), box-shadow .4s ease;
   transform-style: preserve-3d; perspective: 800px;
+  display: flex;
+  flex-direction: column;
 }
 .product-card:hover { transform: translateY(-10px) rotateX(2deg) rotateY(-2deg); box-shadow: 0 30px 70px rgba(31,41,50,.14); }
-.product-number { position: absolute; top: 20px; right: 22px; z-index: 3; color: var(--gold-dark); font: 700 11px/1 Arial, sans-serif; letter-spacing: .12em; }
-.product-image-wrap { aspect-ratio: 1 / 1.03; display: grid; place-items: center; padding: 8px 10px 0; background: radial-gradient(circle at 50% 50%, #fffdf8 0 32%, transparent 68%); }
-.product-image-wrap img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; transition: transform .5s cubic-bezier(.22, 1, .36, 1); }
-.product-card:hover .product-image-wrap img { transform: scale(1.06); }
-.product-card-copy { padding: 6px 24px 25px; }
-.product-card h3 { margin: 0; color: var(--navy); font: 700 23px/1.15 Georgia, serif; }
-.product-card p { min-height: 46px; margin: 10px 0 18px; color: var(--muted); font-size: 13px; line-height: 1.6; }
+.product-number { position: absolute; top: 18px; right: 20px; z-index: 3; color: var(--navy); font: 700 11px/1 Arial, sans-serif; letter-spacing: .12em; background: rgba(244, 231, 199, 0.85); backdrop-filter: blur(8px); padding: 5px 9px; border-radius: 999px; border: 1px solid var(--gold); }
+.product-image-wrap {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px 12px 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fffdf8;
+  box-shadow: inset 0 0 0 1px rgba(199, 163, 94, 0.18), 0 4px 16px rgba(16, 36, 66, 0.05);
+}
+.product-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform .5s cubic-bezier(.22, 1, .36, 1);
+}
+.product-card:hover .product-image-wrap img { transform: scale(1.05); }
+.product-card-copy { padding: 18px 22px 24px; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; }
+.product-card h3 { margin: 0; color: var(--navy); font: 700 22px/1.15 Georgia, serif; }
+.product-card p { min-height: 44px; margin: 8px 0 16px; color: var(--muted); font-size: 13px; line-height: 1.6; }
 .product-card-copy a { display: inline-flex; align-items: center; gap: 8px; color: var(--navy); font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .09em; transition: gap .2s; }
 .product-card-copy a:hover { gap: 14px; }
 
@@ -362,26 +380,59 @@ img { max-width: 100%; height: auto; }
 .brine-grid--preview { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 840px; }
 .brine-card {
   overflow: hidden; border: 1px solid rgba(244,231,199,.24); border-radius: 24px;
-  background: rgba(11,26,48,.18);
+  background: rgba(11,26,48,.25);
+  backdrop-filter: blur(12px);
   transition: transform .4s cubic-bezier(.22, 1, .36, 1), background .3s ease, box-shadow .4s;
   transform-style: preserve-3d; perspective: 800px;
+  display: flex;
+  flex-direction: column;
 }
-.brine-card:hover { transform: translateY(-10px) rotateX(2deg) rotateY(-2deg); background: rgba(11,26,48,.3); box-shadow: 0 28px 60px rgba(0,0,0,.22); }
-.brine-card-top { min-height: 54px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 20px 10px; }
+.brine-card:hover { transform: translateY(-10px) rotateX(2deg) rotateY(-2deg); background: rgba(11,26,48,.42); box-shadow: 0 28px 60px rgba(0,0,0,.3); }
+.brine-card-top { min-height: 48px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px 8px; }
 .brine-card-top span { color: var(--gold); font-size: 10px; font-weight: 800; letter-spacing: .12em; }
-.brine-card-top small { color: rgba(255,255,255,.6); font-size: 9px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
-.brine-image-wrap { aspect-ratio: .92 / 1; display: grid; place-items: center; padding: 0 4px; }
-.brine-image-wrap img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; filter: drop-shadow(0 20px 22px rgba(0,0,0,.24)); transition: transform .5s cubic-bezier(.22, 1, .36, 1); }
-.brine-card:hover .brine-image-wrap img { transform: scale(1.06); }
-.brine-card-copy { padding: 8px 22px 26px; border-top: 1px solid rgba(244,231,199,.16); }
-.brine-card h3 { margin: 0; color: var(--cream); font: 700 22px/1.15 Georgia, serif; }
-.brine-card p { min-height: 44px; margin: 10px 0 0; color: rgba(255,255,255,.64); font-size: 12px; line-height: 1.55; }
+.brine-card-top small { color: rgba(255,255,255,.75); font-size: 9px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.brine-image-wrap {
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 14px 12px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 0 1px rgba(244, 231, 199, 0.2), 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+.brine-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform .5s cubic-bezier(.22, 1, .36, 1);
+}
+.brine-card:hover .brine-image-wrap img { transform: scale(1.05); }
+.brine-card-copy { padding: 14px 18px 22px; border-top: 1px solid rgba(244,231,199,.16); flex-grow: 1; }
+.brine-card h3 { margin: 0; color: var(--cream); font: 700 21px/1.15 Georgia, serif; }
+.brine-card p { min-height: 44px; margin: 8px 0 0; color: rgba(255,255,255,.72); font-size: 12px; line-height: 1.55; }
 
 /* ===== FISH / ANCHOVY SECTION ===== */
 .fish-section { min-height: 760px; display: grid; grid-template-columns: 1.08fr .92fr; overflow: hidden; background: var(--navy-deep); color: white; }
-.fish-visual { position: relative; min-height: 760px; display: grid; place-items: center; background: radial-gradient(circle at 50% 50%, rgba(199,163,94,.15), transparent 59%); }
-.fish-visual::before { content: ""; position: absolute; width: min(42vw, 590px); height: min(42vw, 590px); border: 1px solid rgba(199,163,94,.32); border-radius: 50%; }
-.fish-visual img { position: relative; z-index: 2; width: min(52vw, 680px); filter: drop-shadow(0 34px 32px rgba(0,0,0,.42)); }
+.fish-visual { position: relative; min-height: 760px; display: grid; place-items: center; padding: 40px; background: radial-gradient(circle at 50% 50%, rgba(199,163,94,.15), transparent 59%); }
+.fish-visual::before { content: ""; position: absolute; width: min(42vw, 590px); height: min(42vw, 590px); border: 1px solid rgba(199,163,94,.32); border-radius: 50%; pointer-events: none; }
+.fish-visual img {
+  position: relative;
+  z-index: 2;
+  width: min(85%, 520px);
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 28px;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(199, 163, 94, 0.3);
+  transition: transform .5s cubic-bezier(.22, 1, .36, 1), box-shadow .5s ease;
+}
+.fish-visual:hover img {
+  transform: scale(1.02) translateY(-4px);
+  box-shadow: 0 42px 95px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(199, 163, 94, 0.45);
+}
 .fish-copy { align-self: center; max-width: 680px; padding: 90px clamp(34px, 7vw, 110px) 90px 30px; }
 .fish-copy h2 { margin: 0; color: var(--cream); font: 700 clamp(44px, 5vw, 76px)/1 Georgia, serif; letter-spacing: -.04em; }
 .fish-copy > p:not(.eyebrow) { margin: 28px 0 0; color: rgba(255,255,255,.66); font-size: 17px; line-height: 1.75; }
@@ -441,8 +492,14 @@ img { max-width: 100%; height: auto; }
 .form-submit:disabled { opacity: .7; cursor: not-allowed; transform: none; }
 .form-success {
   margin: 8px 0 0; padding: 14px 18px;
-  background: rgba(199,163,94,.14); border: 1px solid rgba(199,163,94,.3); border-radius: 12px;
-  color: var(--gold); font-size: 14px; font-weight: 700; text-align: center;
+  background: rgba(37, 211, 102, 0.12); border: 1px solid rgba(37, 211, 102, 0.35); border-radius: 12px;
+  color: #25d366; font-size: 14px; text-align: center;
+  animation: fadeInUp .4s ease both;
+}
+.form-error {
+  margin: 8px 0 0; padding: 12px 16px;
+  background: rgba(239, 68, 68, 0.14); border: 1px solid rgba(239, 68, 68, 0.35); border-radius: 12px;
+  color: #fca5a5; font-size: 13px; font-weight: 600; text-align: center;
   animation: fadeInUp .4s ease both;
 }
 
@@ -592,3 +649,255 @@ footer nav a:hover::after { right: 0; }
   .page-hero-deco { width: min(85vw, 340px); height: min(85vw, 340px); }
   footer { padding: 24px 16px; max-width: 100%; box-sizing: border-box; }
 }
+
+/* ===== WHATSAPP FLOATING BUTTON & CONTACT STYLES ===== */
+.whatsapp-float-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 18px 8px 8px;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: #ffffff !important;
+  border-radius: 999px;
+  box-shadow: 0 8px 30px rgba(18, 140, 126, 0.45), 0 2px 6px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease, background 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+.whatsapp-float-btn:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 14px 40px rgba(18, 140, 126, 0.6), 0 4px 12px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #2ae06d, #109b8b);
+}
+.whatsapp-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  flex-shrink: 0;
+}
+.whatsapp-icon svg {
+  display: block;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+.whatsapp-icon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(37, 211, 102, 0.6);
+  z-index: -1;
+  animation: whatsappPulse 2.2s infinite ease-out;
+  pointer-events: none;
+}
+@keyframes whatsappPulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  70% { transform: scale(1.5); opacity: 0; }
+  100% { transform: scale(1.65); opacity: 0; }
+}
+.whatsapp-label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  line-height: 1.25;
+}
+.whatsapp-title {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+.whatsapp-number {
+  font-size: 11px;
+  opacity: 0.95;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Button & Card in Contact Page */
+.button-whatsapp {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: #ffffff !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 10px 25px rgba(18, 140, 126, 0.35);
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0 24px;
+}
+.button-whatsapp svg {
+  flex-shrink: 0;
+  display: block;
+}
+.button-whatsapp:hover {
+  background: linear-gradient(135deg, #2ae06d, #14a090);
+  box-shadow: 0 16px 35px rgba(18, 140, 126, 0.45);
+  transform: translateY(-2px);
+}
+
+.whatsapp-contact-card {
+  margin: 32px 0 24px;
+  padding: 24px;
+  background: rgba(37, 211, 102, 0.08);
+  border: 1px solid rgba(37, 211, 102, 0.3);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.whatsapp-contact-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #25d366;
+  background: rgba(37, 211, 102, 0.15);
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+.whatsapp-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #25d366;
+  box-shadow: 0 0 8px #25d366;
+  animation: pulse 1.8s infinite;
+}
+.whatsapp-contact-card h3 {
+  margin: 0;
+  color: var(--cream);
+  font: 700 20px/1.2 Georgia, serif;
+}
+.whatsapp-contact-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.form-or-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 10px 0;
+}
+.form-or-divider::before,
+.form-or-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid rgba(199, 163, 94, 0.25);
+}
+.form-or-divider span {
+  padding: 0 14px;
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.form-whatsapp-btn {
+  width: 100%;
+  justify-content: center;
+  min-height: 52px;
+  font-size: 14px;
+}
+
+/* Contact Info Details Box */
+.contact-details-box {
+  margin-top: 28px;
+  display: grid;
+  gap: 18px;
+}
+.contact-detail-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.contact-detail-label {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.contact-detail-value {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.contact-detail-value:hover {
+  color: var(--gold);
+  text-decoration: underline;
+}
+.contact-email-text {
+  word-break: break-all;
+}
+.contact-detail-address {
+  margin-top: 2px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 13px;
+  font-style: normal;
+  line-height: 1.65;
+}
+
+/* Footer Meta with Email */
+.footer-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+.footer-meta p {
+  margin: 0;
+}
+.footer-email-link {
+  font-size: 12px;
+  color: var(--gold-dark);
+  text-decoration: none;
+  font-weight: 700;
+  transition: opacity 0.2s;
+}
+.footer-email-link:hover {
+  opacity: 0.75;
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .whatsapp-float-btn {
+    bottom: 20px;
+    right: 18px;
+    padding: 6px;
+    border-radius: 50%;
+  }
+  .whatsapp-label {
+    display: none;
+  }
+  .whatsapp-icon {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+

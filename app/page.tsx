@@ -190,7 +190,14 @@ export default function Home() {
           <div className="contact-card">
             <p>Tell us which products you are interested in and how we can help.</p>
             <Link className="button button-gold" href="/contact">Get in touch</Link>
-            <address>Al Mubarak Factory Agency<br />Building No. 2/20B, Panakkulam<br />Rayaranghoth Post, Kerala</address>
+            <address>
+              Al Mubarak Factory Agency<br />
+              Building No. 2/20B, Panakkulam<br />
+              Rayaranghoth Post, Kerala<br />
+              <a href="mailto:ararafoodindustry@gmail.com" style={{ color: "var(--gold)", textDecoration: "none", display: "inline-block", marginTop: "6px" }}>
+                ararafoodindustry@gmail.com
+              </a>
+            </address>
           </div>
         </ScrollReveal>
       </section>
