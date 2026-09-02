@@ -20,7 +20,7 @@ export default function Home() {
         <div className="hero-copy">
           <p className="eyebrow">EST. 2024 · HONEST INGREDIENTS</p>
           <h1>Tradition, packed for today.</h1>
-          <p className="hero-lede">Familiar sweets, vibrant vegetables in brine and coastal anchovy powder — prepared with care and presented with pride.</p>
+          <p className="hero-lede">Familiar sweets, vibrant vegetables in brine and coastal anchovies — prepared with care and presented with pride.</p>
           <div className="hero-actions">
             <Link className="button button-gold" href="/sweets">Explore our range</Link>
             <Link className="text-link" href="/about">Discover ARARA FOOD <span>↗</span></Link>
@@ -64,7 +64,7 @@ export default function Home() {
             <span className="cat-num">03</span>
             <div className="cat-info">
               <strong className="cat-title">Coastal Pantry</strong>
-              <span className="cat-count">1 Product</span>
+              <span className="cat-count">2 Products</span>
             </div>
             <span className="cat-arrow">→</span>
           </Link>
@@ -142,17 +142,38 @@ export default function Home() {
         </ScrollReveal>
       </section>
 
-      {/* ─── ANCHOVY SNIPPET ─── */}
-      <section className="fish-section">
+      {/* ─── ANCHOVY DRY WHOLE SNIPPET ─── */}
+      <section className="fish-section" id="anchovy-dry-whole">
+        <ScrollReveal className="fish-visual">
+          <Image src="/products/anchovy-fish-dry-whole.png" alt="ARARA FOOD Anchovy Fish Dry Whole" width={760} height={760} />
+        </ScrollReveal>
+        <ScrollReveal className="fish-copy" delay={2}>
+          <p className="eyebrow">COASTAL PANTRY · SUN-DRIED WHOLE</p>
+          <h2>Sun-dried whole anchovies with deep ocean character.</h2>
+          <p>Naturally sun-dried whole anchovies (Nethili / Kozhuva), cleaned with care and packed for lasting crispness. An irreplaceable staple for authentic coastal cooking.</p>
+          <div className="fish-points"><span>Sun-dried &amp; clean sorted</span><span>Crispy fry &amp; curry ready</span><span>Sealed freshness pouch</span></div>
+          <Link className="button button-gold" href="/brine#anchovy-dry-whole">Explore dry whole →</Link>
+        </ScrollReveal>
+      </section>
+
+      {/* ─── BRAND DIVIDER ─── */}
+      <div className="fish-divider" aria-hidden="true">
+        <span className="fish-divider-line" />
+        <span className="fish-divider-badge">✦ COASTAL PANTRY COLLECTION ✦</span>
+        <span className="fish-divider-line" />
+      </div>
+
+      {/* ─── ANCHOVY POWDER SNIPPET ─── */}
+      <section className="fish-section fish-section--reversed" id="anchovy-powder">
         <ScrollReveal className="fish-visual">
           <Image src="/products/anchovy-fish-powder.png" alt="ARARA FOOD Anchovy Fish Powder" width={760} height={760} />
         </ScrollReveal>
         <ScrollReveal className="fish-copy" delay={2}>
-          <p className="eyebrow">ANCHOVY FISH POWDER</p>
+          <p className="eyebrow">COASTAL PANTRY · CONCENTRATED POWDER</p>
           <h2>A coastal depth for everyday dishes.</h2>
-          <p>Finely milled anchovy powder brings concentrated savoury character to curries, rice, sauces and home-style recipes.</p>
+          <p>Finely milled anchovy powder brings concentrated savoury character to curries, rice, sauces and home-style recipes. A pinch transforms the ordinary into something memorable.</p>
           <div className="fish-points"><span>Finely milled</span><span>Rich umami character</span><span>Easy pantry format</span></div>
-          <Link className="button button-gold" href="/brine">Explore the range</Link>
+          <Link className="button button-gold" href="/brine#anchovy-powder">Explore anchovy powder →</Link>
         </ScrollReveal>
       </section>
 

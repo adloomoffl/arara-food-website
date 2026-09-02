@@ -439,6 +439,42 @@ img { max-width: 100%; height: auto; }
 .fish-points { display: grid; gap: 13px; margin: 33px 0 38px; color: var(--cream); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
 .fish-points span::before { content: "✦"; margin-right: 12px; color: var(--gold); }
 
+.fish-section--reversed {
+  grid-template-columns: .92fr 1.08fr;
+  background: #0d1726;
+}
+.fish-section--reversed .fish-visual {
+  order: 2;
+}
+.fish-section--reversed .fish-copy {
+  order: 1;
+  padding: 90px 30px 90px clamp(34px, 7vw, 110px);
+}
+
+.fish-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 34px 24px;
+  background: #09101a;
+  border-top: 1px solid rgba(199, 163, 94, 0.2);
+  border-bottom: 1px solid rgba(199, 163, 94, 0.2);
+}
+.fish-divider-line {
+  flex: 1;
+  max-width: 160px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(199, 163, 94, 0.45), transparent);
+}
+.fish-divider-badge {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
 /* ===== STORY / ABOUT ===== */
 .story-section { display: grid; grid-template-columns: minmax(340px, .72fr) 1.28fr; gap: clamp(48px, 8vw, 130px); align-items: center; padding: 120px clamp(24px, 8vw, 120px); background: var(--section); }
 .story-mark-wrap { position: relative; display: grid; place-items: center; }
@@ -630,7 +666,10 @@ footer nav a:hover::after { right: 0; }
     aspect-ratio: 1 / 0.95;
     padding: 16px 20px 0;
   }
-  .fish-section { min-height: auto; max-width: 100%; overflow: hidden; }
+  .fish-section,
+  .fish-section--reversed { min-height: auto; max-width: 100%; overflow: hidden; grid-template-columns: 1fr; }
+  .fish-section--reversed .fish-visual { order: 1; }
+  .fish-section--reversed .fish-copy { order: 2; padding: 20px 16px 60px; }
   .fish-visual { min-height: 360px; max-width: 100%; overflow: hidden; padding: 20px; }
   .fish-visual img { width: min(85vw, 360px); max-width: 100%; }
   .fish-visual::before { width: min(76vw, 300px); height: min(76vw, 300px); }

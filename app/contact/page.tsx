@@ -88,11 +88,11 @@ export default function ContactPage() {
               Explore our full range first.
             </h2>
             <p style={{ color: "var(--muted)", fontSize: "16px", lineHeight: 1.7, margin: "0 0 32px" }}>
-              Browse our heritage sweets, brine-preserved vegetables and anchovy powder to find what suits your needs.
+              Browse our heritage sweets, brine-preserved vegetables and coastal anchovies (whole &amp; powder) to find what suits your needs.
             </p>
             <div style={{ display: "flex", gap: "14px", justifyContent: "center", flexWrap: "wrap" }}>
               <Link className="button button-gold" href="/sweets">View Sweets</Link>
-              <Link className="button button-gold" href="/brine">View Brine &amp; Powder</Link>
+              <Link className="button button-gold" href="/brine">View Brine &amp; Coastal</Link>
               <Link className="button button-gold" href="/about">About Us</Link>
             </div>
           </div>

@@ -6,16 +6,16 @@ import WhatsAppButton from "./components/WhatsAppButton";
 
 export const metadata: Metadata = {
   title: "ARARA FOOD | Tradition, packed for today",
-  description: "Discover ARARA FOOD sweets, vegetables in brine and anchovy fish powder.",
+  description: "Discover ARARA FOOD sweets, vegetables in brine, and coastal anchovies (whole & powder).",
   openGraph: {
     title: "ARARA FOOD | Tradition, packed for today",
-    description: "Sweets, vegetables in brine and coastal anchovy powder, presented with pride.",
+    description: "Sweets, vegetables in brine and coastal anchovies (whole & powder), presented with pride.",
     images: [{ url: "/og.png", width: 1733, height: 907, alt: "ARARA FOOD product range" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "ARARA FOOD | Tradition, packed for today",
-    description: "Sweets, vegetables in brine and coastal anchovy powder, presented with pride.",
+    description: "Sweets, vegetables in brine and coastal anchovies (whole & powder), presented with pride.",
     images: ["/og.png"],
   },
 };
