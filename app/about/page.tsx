@@ -33,12 +33,12 @@ export default function AboutPage() {
           <h2>Where tradition meets today.</h2>
           <p>
             Born from a love of honest, homemade food, ARARA FOOD started with a simple idea: the recipes
-            we grew up with deserve a bigger stage. We take heritage sweets, bright vegetables in brine
-            and coastal anchovy powder, then present them with the care and quality they&apos;ve always deserved.
+            we grew up with deserve a bigger stage. We take heritage sweets, bright vegetables in brine,
+            anchovy fish dry powder, and fish sauce pre-mix, then present them with the care and quality they&apos;ve always deserved.
           </p>
           <p>
             Every product carries a piece of home — the crunch of a freshly made peanut bar, the tang
-            of perfectly brined mango, the deep umami of sun-dried anchovy. We believe great food
+            of perfectly brined mango, the deep umami of our coastal dry powder and sauce pre-mix. We believe great food
             doesn&apos;t need to be complicated. It just needs to be made with heart.
           </p>
         </ScrollReveal>
@@ -91,10 +91,10 @@ export default function AboutPage() {
         </ScrollReveal>
         <ScrollReveal delay={2}>
           <div className="contact-card">
-            <p>From heritage sweets to vibrant brine-packed vegetables and coastal anchovy powder — there&apos;s something for every kitchen.</p>
+            <p>From heritage sweets to vibrant brine-packed vegetables, anchovy fish dry powder, and fish sauce pre-mix — there&apos;s something for every kitchen.</p>
             <div style={{ display: "flex", gap: "14px", flexWrap: "wrap" }}>
               <Link className="button button-gold" href="/sweets">View Sweets</Link>
-              <Link className="button button-gold" href="/brine">View Brine &amp; Powder</Link>
+              <Link className="button button-gold" href="/brine">View Brine &amp; Coastal</Link>
             </div>
           </div>
         </ScrollReveal>

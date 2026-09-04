@@ -10,7 +10,13 @@ export default function Footer() {
       </div>
       <div className="footer-meta">
         <p>Good food. Warm memories.</p>
-        <a href="mailto:ararafoodindustry@gmail.com" className="footer-email-link">ararafoodindustry@gmail.com</a>
+        <div className="footer-links-row">
+          <a href="mailto:ararafoodindustry@gmail.com" className="footer-email-link">ararafoodindustry@gmail.com</a>
+          <span className="footer-dot-sep">·</span>
+          <a href="https://www.instagram.com/arara_bfood/" target="_blank" rel="noopener noreferrer" className="footer-email-link">
+            Instagram: @arara_bfood
+          </a>
+        </div>
       </div>
       <nav aria-label="Footer navigation">
         <Link href="/sweets">Sweets</Link>

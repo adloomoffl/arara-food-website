@@ -20,7 +20,7 @@ export default function Home() {
         <div className="hero-copy">
           <p className="eyebrow">EST. 2024 · HONEST INGREDIENTS</p>
           <h1>Tradition, packed for today.</h1>
-          <p className="hero-lede">Familiar sweets, vibrant vegetables in brine and coastal anchovies — prepared with care and presented with pride.</p>
+          <p className="hero-lede">Familiar sweets, vibrant vegetables in brine, and coastal pantry seasonings — prepared with care and presented with pride.</p>
           <div className="hero-actions">
             <Link className="button button-gold" href="/sweets">Explore our range</Link>
             <Link className="text-link" href="/about">Discover ARARA FOOD <span>↗</span></Link>
@@ -142,17 +142,17 @@ export default function Home() {
         </ScrollReveal>
       </section>
 
-      {/* ─── ANCHOVY DRY WHOLE SNIPPET ─── */}
-      <section className="fish-section" id="anchovy-dry-whole">
+      {/* ─── ANCHOVY FISH DRY POWDER SNIPPET ─── */}
+      <section className="fish-section" id="anchovy-fish-dry-powder">
         <ScrollReveal className="fish-visual">
-          <Image src="/products/anchovy-fish-dry-whole.png" alt="ARARA FOOD Anchovy Fish Dry Whole" width={760} height={760} />
+          <Image src="/products/anchovy-fish-dry-powder.png" alt="ARARA FOOD Anchovy Fish Dry Powder" width={760} height={760} />
         </ScrollReveal>
         <ScrollReveal className="fish-copy" delay={2}>
-          <p className="eyebrow">COASTAL PANTRY · SUN-DRIED WHOLE</p>
-          <h2>Sun-dried whole anchovies with deep ocean character.</h2>
-          <p>Naturally sun-dried whole anchovies (Nethili / Kozhuva), cleaned with care and packed for lasting crispness. An irreplaceable staple for authentic coastal cooking.</p>
-          <div className="fish-points"><span>Sun-dried &amp; clean sorted</span><span>Crispy fry &amp; curry ready</span><span>Sealed freshness pouch</span></div>
-          <Link className="button button-gold" href="/brine#anchovy-dry-whole">Explore dry whole →</Link>
+          <p className="eyebrow">COASTAL PANTRY · DRY POWDER</p>
+          <h2>Anchovy fish dry powder for deep savoury warmth.</h2>
+          <p>Carefully dehydrated and finely milled anchovy dry powder, capturing authentic coastal umami without fuss. An effortless pantry essential for elevating curries, sambars, roasts, and rice.</p>
+          <div className="fish-points"><span>100% pure anchovy essence</span><span>Rich coastal umami</span><span>Aroma-sealed pouch</span></div>
+          <Link className="button button-gold" href="/brine#anchovy-fish-dry-powder">Explore dry powder →</Link>
         </ScrollReveal>
       </section>
 
@@ -163,17 +163,17 @@ export default function Home() {
         <span className="fish-divider-line" />
       </div>
 
-      {/* ─── ANCHOVY POWDER SNIPPET ─── */}
-      <section className="fish-section fish-section--reversed" id="anchovy-powder">
+      {/* ─── FISH SAUCE PRE-MIX SNIPPET ─── */}
+      <section className="fish-section fish-section--reversed" id="fish-sauce-premix">
         <ScrollReveal className="fish-visual">
-          <Image src="/products/anchovy-fish-powder.png" alt="ARARA FOOD Anchovy Fish Powder" width={760} height={760} />
+          <Image src="/products/fish-sauce-premix.png" alt="ARARA FOOD Fish Sauce Pre-Mix" width={760} height={760} />
         </ScrollReveal>
         <ScrollReveal className="fish-copy" delay={2}>
-          <p className="eyebrow">COASTAL PANTRY · CONCENTRATED POWDER</p>
-          <h2>A coastal depth for everyday dishes.</h2>
-          <p>Finely milled anchovy powder brings concentrated savoury character to curries, rice, sauces and home-style recipes. A pinch transforms the ordinary into something memorable.</p>
-          <div className="fish-points"><span>Finely milled</span><span>Rich umami character</span><span>Easy pantry format</span></div>
-          <Link className="button button-gold" href="/brine#anchovy-powder">Explore anchovy powder →</Link>
+          <p className="eyebrow">COASTAL PANTRY · SAUCE PRE-MIX</p>
+          <h2>Fish sauce pre-mix with balanced coastal richness.</h2>
+          <p>A masterfully crafted pre-mix blend delivering the rich, savoury complexity of traditional fish sauce with effortless convenience. Simply stir into stir-fries, marinades, curries, and broths.</p>
+          <div className="fish-points"><span>Instant gourmet umami</span><span>Perfect savoury balance</span><span>Versatile cooking pre-mix</span></div>
+          <Link className="button button-gold" href="/brine#fish-sauce-premix">Explore sauce pre-mix →</Link>
         </ScrollReveal>
       </section>
 
@@ -217,6 +217,10 @@ export default function Home() {
               Rayaranghoth Post, Kerala<br />
               <a href="mailto:ararafoodindustry@gmail.com" style={{ color: "var(--gold)", textDecoration: "none", display: "inline-block", marginTop: "6px" }}>
                 ararafoodindustry@gmail.com
+              </a>
+              <br />
+              <a href="https://www.instagram.com/arara_bfood/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--gold)", textDecoration: "none", display: "inline-block", marginTop: "4px" }}>
+                Instagram: @arara_bfood
               </a>
             </address>
           </div>
