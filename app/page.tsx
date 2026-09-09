@@ -1,31 +1,36 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "./components/ScrollReveal";
-
-const sweetsPreview = [
-  { name: "Peanut Bar", description: "Roasted peanuts bound into a crisp, golden bar.", image: "/products/peanut-bar.png" },
-  { name: "Sesame Bar", description: "Toasted sesame seeds in a delicate, nutty crunch.", image: "/products/sesame-bar.png" },
-];
-
-const brinePreview = [
-  { name: "Mango in Brine", note: "Tart · bright · juicy", description: "Firm mango wedges preserved for a vibrant, savoury tang.", image: "/products/mango-in-brine.png" },
-  { name: "Green Chilli in Brine", note: "Fresh · piquant · crisp", description: "Whole green chillies with lively heat and a bright finish.", image: "/products/green-chilli-in-brine.png" },
-];
+import { useLanguage } from "./context/LanguageContext";
 
 export default function Home() {
+  const { t, locale } = useLanguage();
+  const isAr = locale === "ar";
+
+  const sweetsPreview = t.sweets_list.slice(0, 2);
+  const brinePreview = t.brine_list.slice(0, 2);
+
   return (
     <main className="page-transition">
       {/* ─── HERO ─── */}
       <section className="hero" id="top">
         <div className="hero-copy">
-          <p className="eyebrow">EST. 2024 · HONEST INGREDIENTS</p>
-          <h1>Tradition, packed for today.</h1>
-          <p className="hero-lede">Familiar sweets, vibrant vegetables in brine, and coastal pantry seasonings — prepared with care and presented with pride.</p>
+          <p className="eyebrow">{t.hero_eyebrow}</p>
+          <h1>{t.hero_title}</h1>
+          <p className="hero-lede">{t.hero_lede}</p>
           <div className="hero-actions">
-            <Link className="button button-gold" href="/sweets">Explore our range</Link>
-            <Link className="text-link" href="/about">Discover ARARA FOOD <span>↗</span></Link>
+            <Link className="button button-gold" href="/sweets">{t.hero_cta_explore}</Link>
+            <Link className="text-link" href="/about">
+              {t.hero_cta_about} <span>{isAr ? "↖" : "↗"}</span>
+            </Link>
           </div>
-          <div className="hero-notes" aria-label="Product qualities"><span>Natural ingredients</span><span>Distinctive flavours</span><span>Made to share</span></div>
+          <div className="hero-notes" aria-label="Product qualities">
+            <span>{t.hero_note_natural}</span>
+            <span>{t.hero_note_flavours}</span>
+            <span>{t.hero_note_share}</span>
+          </div>
         </div>
         <div className="hero-products" aria-label="Featured ARARA FOOD collection">
           <Image
@@ -45,28 +50,28 @@ export default function Home() {
           <Link href="/sweets" className="category-strip-item">
             <span className="cat-num">01</span>
             <div className="cat-info">
-              <strong className="cat-title">Heritage Sweets</strong>
-              <span className="cat-count">4 Products</span>
+              <strong className="cat-title">{t.cat_sweets_title}</strong>
+              <span className="cat-count">{t.cat_sweets_count}</span>
             </div>
-            <span className="cat-arrow">→</span>
+            <span className="cat-arrow">{isAr ? "←" : "→"}</span>
           </Link>
           <div className="cat-divider" aria-hidden="true" />
           <Link href="/brine" className="category-strip-item">
             <span className="cat-num">02</span>
             <div className="cat-info">
-              <strong className="cat-title">Vegetables in Brine</strong>
-              <span className="cat-count">4 Products</span>
+              <strong className="cat-title">{t.cat_brine_title}</strong>
+              <span className="cat-count">{t.cat_brine_count}</span>
             </div>
-            <span className="cat-arrow">→</span>
+            <span className="cat-arrow">{isAr ? "←" : "→"}</span>
           </Link>
           <div className="cat-divider" aria-hidden="true" />
           <Link href="/brine" className="category-strip-item">
             <span className="cat-num">03</span>
             <div className="cat-info">
-              <strong className="cat-title">Coastal Pantry</strong>
-              <span className="cat-count">2 Products</span>
+              <strong className="cat-title">{t.cat_coastal_title}</strong>
+              <span className="cat-count">{t.cat_coastal_count}</span>
             </div>
-            <span className="cat-arrow">→</span>
+            <span className="cat-arrow">{isAr ? "←" : "→"}</span>
           </Link>
         </div>
       </section>
@@ -76,10 +81,10 @@ export default function Home() {
         <ScrollReveal>
           <div className="section-heading">
             <div>
-              <p className="eyebrow eyebrow-dark">THE SWEET SECTION</p>
-              <h2>Crunch, comfort and a little joy.</h2>
+              <p className="eyebrow eyebrow-dark">{t.home_sweets_eyebrow}</p>
+              <h2>{t.home_sweets_title}</h2>
             </div>
-            <p>Familiar nut and seed sweets, polished into premium everyday treats.</p>
+            <p>{t.home_sweets_desc}</p>
           </div>
         </ScrollReveal>
         <div className="product-grid product-grid--preview">
@@ -93,7 +98,9 @@ export default function Home() {
                 <div className="product-card-copy">
                   <h3>{product.name}</h3>
                   <p>{product.description}</p>
-                  <Link href="/sweets" aria-label={`View ${product.name}`}>View <span>↗</span></Link>
+                  <Link href="/sweets" aria-label={`View ${product.name}`}>
+                    {t.view_btn} <span>{isAr ? "↖" : "↗"}</span>
+                  </Link>
                 </div>
               </article>
             </ScrollReveal>
@@ -101,7 +108,9 @@ export default function Home() {
         </div>
         <ScrollReveal delay={3}>
           <div className="snippet-cta">
-            <Link className="button button-gold" href="/sweets">View all sweets →</Link>
+            <Link className="button button-gold" href="/sweets">
+              {t.home_sweets_cta} {isAr ? "←" : "→"}
+            </Link>
           </div>
         </ScrollReveal>
       </section>
@@ -111,10 +120,10 @@ export default function Home() {
         <ScrollReveal>
           <div className="section-heading section-heading-light">
             <div>
-              <p className="eyebrow">VEGETABLES IN BRINE</p>
-              <h2>Bright flavour, beautifully preserved.</h2>
+              <p className="eyebrow">{t.home_brine_eyebrow}</p>
+              <h2>{t.home_brine_title}</h2>
             </div>
-            <p>Glass-packed vegetables with vivid colour, honest texture and a clean savoury tang.</p>
+            <p>{t.home_brine_desc}</p>
           </div>
         </ScrollReveal>
         <div className="brine-grid brine-grid--preview">
@@ -137,7 +146,9 @@ export default function Home() {
         </div>
         <ScrollReveal delay={3}>
           <div className="snippet-cta">
-            <Link className="button button-gold" href="/brine">View all brine products →</Link>
+            <Link className="button button-gold" href="/brine">
+              {t.home_brine_cta} {isAr ? "←" : "→"}
+            </Link>
           </div>
         </ScrollReveal>
       </section>
@@ -148,18 +159,24 @@ export default function Home() {
           <Image src="/products/anchovy-fish-dry-powder.png" alt="ARARA FOOD Anchovy Fish Dry Powder" width={760} height={760} />
         </ScrollReveal>
         <ScrollReveal className="fish-copy" delay={2}>
-          <p className="eyebrow">COASTAL PANTRY · DRY POWDER</p>
-          <h2>Anchovy fish dry powder for deep savoury warmth.</h2>
-          <p>Carefully dehydrated and finely milled anchovy dry powder, capturing authentic coastal umami without fuss. An effortless pantry essential for elevating curries, sambars, roasts, and rice.</p>
-          <div className="fish-points"><span>100% pure anchovy essence</span><span>Rich coastal umami</span><span>Aroma-sealed pouch</span></div>
-          <Link className="button button-gold" href="/brine#anchovy-fish-dry-powder">Explore dry powder →</Link>
+          <p className="eyebrow">{t.home_anchovy_eyebrow}</p>
+          <h2>{t.home_anchovy_title}</h2>
+          <p>{t.home_anchovy_desc}</p>
+          <div className="fish-points">
+            {t.home_anchovy_points.map((point, i) => (
+              <span key={i}>{point}</span>
+            ))}
+          </div>
+          <Link className="button button-gold" href="/brine#anchovy-fish-dry-powder">
+            {t.home_anchovy_cta} {isAr ? "←" : "→"}
+          </Link>
         </ScrollReveal>
       </section>
 
       {/* ─── BRAND DIVIDER ─── */}
       <div className="fish-divider" aria-hidden="true">
         <span className="fish-divider-line" />
-        <span className="fish-divider-badge">✦ COASTAL PANTRY COLLECTION ✦</span>
+        <span className="fish-divider-badge">{t.home_divider_badge}</span>
         <span className="fish-divider-line" />
       </div>
 
@@ -169,11 +186,17 @@ export default function Home() {
           <Image src="/products/fish-sauce-premix.png" alt="ARARA FOOD Fish Sauce Pre-Mix" width={760} height={760} />
         </ScrollReveal>
         <ScrollReveal className="fish-copy" delay={2}>
-          <p className="eyebrow">COASTAL PANTRY · SAUCE PRE-MIX</p>
-          <h2>Fish sauce pre-mix with balanced coastal richness.</h2>
-          <p>A masterfully crafted pre-mix blend delivering the rich, savoury complexity of traditional fish sauce with effortless convenience. Simply stir into stir-fries, marinades, curries, and broths.</p>
-          <div className="fish-points"><span>Instant gourmet umami</span><span>Perfect savoury balance</span><span>Versatile cooking pre-mix</span></div>
-          <Link className="button button-gold" href="/brine#fish-sauce-premix">Explore sauce pre-mix →</Link>
+          <p className="eyebrow">{t.home_sauce_eyebrow}</p>
+          <h2>{t.home_sauce_title}</h2>
+          <p>{t.home_sauce_desc}</p>
+          <div className="fish-points">
+            {t.home_sauce_points.map((point, i) => (
+              <span key={i}>{point}</span>
+            ))}
+          </div>
+          <Link className="button button-gold" href="/brine#fish-sauce-premix">
+            {t.home_sauce_cta} {isAr ? "←" : "→"}
+          </Link>
         </ScrollReveal>
       </section>
 
@@ -185,16 +208,30 @@ export default function Home() {
           </div>
         </ScrollReveal>
         <ScrollReveal delay={2} className="story-copy">
-          <p className="eyebrow eyebrow-dark">OUR STORY</p>
-          <h2>Food that brings out the inner child.</h2>
-          <p>ARARA FOOD brings familiar flavours into a confident new presentation — warm enough to feel nostalgic, polished enough to feel special.</p>
+          <p className="eyebrow eyebrow-dark">{t.home_about_eyebrow}</p>
+          <h2>{t.home_about_title}</h2>
+          <p>{t.home_about_desc}</p>
           <div className="value-grid">
-            <div><strong>01</strong><h3>Ingredient first</h3><p>Let the real food, colour and texture lead every product.</p></div>
-            <div><strong>02</strong><h3>Made with care</h3><p>Thoughtful formats that feel reliable, generous and easy to enjoy.</p></div>
-            <div><strong>03</strong><h3>Proudly distinctive</h3><p>A bold navy-and-gold identity that stands apart on every shelf.</p></div>
+            <div>
+              <strong>01</strong>
+              <h3>{t.values_item1_title}</h3>
+              <p>{t.values_item1_desc}</p>
+            </div>
+            <div>
+              <strong>02</strong>
+              <h3>{t.values_item2_title}</h3>
+              <p>{t.values_item2_desc}</p>
+            </div>
+            <div>
+              <strong>03</strong>
+              <h3>{t.values_item3_title}</h3>
+              <p>{t.values_item3_desc}</p>
+            </div>
           </div>
           <div className="snippet-cta" style={{ marginTop: "36px" }}>
-            <Link className="button button-gold" href="/about">Read our full story →</Link>
+            <Link className="button button-gold" href="/about">
+              {t.read_full_story} {isAr ? "←" : "→"}
+            </Link>
           </div>
         </ScrollReveal>
       </section>
@@ -203,18 +240,18 @@ export default function Home() {
       <section className="contact-section">
         <ScrollReveal>
           <div>
-            <p className="eyebrow">TRADE &amp; PRODUCT ENQUIRIES</p>
-            <h2>Bring ARARA FOOD to your table or store.</h2>
+            <p className="eyebrow">{t.home_contact_eyebrow}</p>
+            <h2>{t.home_contact_title}</h2>
           </div>
         </ScrollReveal>
         <ScrollReveal delay={2}>
           <div className="contact-card">
-            <p>Tell us which products you are interested in and how we can help.</p>
-            <Link className="button button-gold" href="/contact">Get in touch</Link>
+            <p>{t.home_contact_desc}</p>
+            <Link className="button button-gold" href="/contact">{t.get_in_touch}</Link>
             <address>
-              Al Mubarak Factory Agency<br />
-              Building No. 2/20B, Panakkulam<br />
-              Rayaranghoth Post, Kerala<br />
+              {t.contact_factory_address.map((line, i) => (
+                <span key={i} style={{ display: "block" }}>{line}</span>
+              ))}
               <a href="mailto:ararafoodindustry@gmail.com" style={{ color: "var(--gold)", textDecoration: "none", display: "inline-block", marginTop: "6px" }}>
                 ararafoodindustry@gmail.com
               </a>

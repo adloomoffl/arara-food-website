@@ -1,6 +1,9 @@
 "use client";
 
+import { useLanguage } from "../context/LanguageContext";
+
 export default function WhatsAppButton() {
+  const { t } = useLanguage();
   const phoneNumber = "919645420727";
   const message = encodeURIComponent(
     "Hello ARARA FOOD, I would like to enquire about your products."
@@ -23,7 +26,7 @@ export default function WhatsAppButton() {
           </svg>
         </span>
         <span className="whatsapp-label">
-          <span className="whatsapp-title">Chat with us</span>
+          <span className="whatsapp-title">{t.whatsapp_title}</span>
           <span className="whatsapp-number">+91 96454 20727</span>
         </span>
       </a>

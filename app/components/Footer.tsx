@@ -1,15 +1,20 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Footer() {
+  const { t, locale } = useLanguage();
+
   return (
     <footer>
       <div className="footer-brand">
-        <Image src="/brand/arara-logo.jpeg" alt="" width={56} height={56} />
+        <Image src="/brand/arara-logo.jpeg" alt="ARARA FOOD logo" width={56} height={56} />
         <strong>ARARA FOOD</strong>
       </div>
       <div className="footer-meta">
-        <p>Good food. Warm memories.</p>
+        <p className={locale === "ar" ? "lang-ar-font" : ""}>{t.tagline}</p>
         <div className="footer-links-row">
           <a href="mailto:ararafoodindustry@gmail.com" className="footer-email-link">ararafoodindustry@gmail.com</a>
           <span className="footer-dot-sep">·</span>
@@ -19,10 +24,10 @@ export default function Footer() {
         </div>
       </div>
       <nav aria-label="Footer navigation">
-        <Link href="/sweets">Sweets</Link>
-        <Link href="/brine">In Brine</Link>
-        <Link href="/about">About Us</Link>
-        <Link href="/contact">Get in touch</Link>
+        <Link href="/sweets">{t.nav_sweets}</Link>
+        <Link href="/brine">{t.nav_brine}</Link>
+        <Link href="/about">{t.nav_about}</Link>
+        <Link href="/contact">{t.nav_contact}</Link>
       </nav>
     </footer>
   );
