@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "./components/ScrollReveal";
+import SweetFilms from "./components/SweetFilms";
 import { useLanguage } from "./context/LanguageContext";
 
 export default function Home() {
@@ -114,6 +115,8 @@ export default function Home() {
           </div>
         </ScrollReveal>
       </section>
+
+      <SweetFilms />
 
       {/* ─── BRINE SNIPPET ─── */}
       <section className="product-section brine-section">

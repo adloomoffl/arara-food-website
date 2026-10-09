@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "../components/ScrollReveal";
+import SweetFilms from "../components/SweetFilms";
 import { useLanguage } from "../context/LanguageContext";
 
 export default function SweetsContent() {
@@ -60,6 +61,8 @@ export default function SweetsContent() {
           ))}
         </div>
       </section>
+
+      <SweetFilms />
 
       {/* CTA Banner */}
       <section className="contact-section">

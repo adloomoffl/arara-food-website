@@ -817,6 +817,25 @@ img { max-width: 100%; height: auto; }
   animation: fadeInUp .4s ease both;
 }
 
+/* ===== SWEET PRODUCT FILMS ===== */
+.sweet-films {
+  padding: 80px clamp(24px, 5vw, 76px) 100px;
+  background: var(--section);
+  border-top: 1px solid var(--line);
+}
+.sweet-films-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px; }
+.sweet-film { margin: 0; min-width: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 22px; background: var(--paper); }
+.sweet-film video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #000; }
+.sweet-film figcaption { display: flex; align-items: flex-start; gap: 20px; padding: 26px; }
+.sweet-film-number { color: var(--gold-dark); font: 700 12px/1.8 Arial, sans-serif; letter-spacing: .12em; }
+.sweet-film h3 { margin: 0 0 9px; color: var(--navy); font: 700 clamp(21px, 2vw, 28px)/1.2 Georgia, serif; }
+.sweet-film p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+@media (max-width: 760px) {
+  .sweet-films { padding: 56px 16px 64px; }
+  .sweet-films-grid { grid-template-columns: 1fr; gap: 24px; }
+  .sweet-film figcaption { padding: 22px 20px; gap: 15px; }
+}
+
 /* ===== FOOTER ===== */
 footer { min-height: 116px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 25px; padding: 24px clamp(24px, 5vw, 76px); background: var(--paper); color: var(--navy); border-top: 1px solid var(--line); }
 .footer-brand { display: flex; align-items: center; gap: 12px; font: 700 15px/1 Georgia, serif; letter-spacing: .1em; }
@@ -1307,6 +1326,4 @@ footer nav a:hover::after { right: 0; }
   right: auto;
   left: clamp(16px, 3vw, 36px);
 }
-
-
 
